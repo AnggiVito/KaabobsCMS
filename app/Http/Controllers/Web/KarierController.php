@@ -18,8 +18,8 @@ class KarierController extends Controller
     public function index()
     {
         $data = [
-            'title' => 'Karier',
-            'subTitle' => 'Daftar Lowongan',
+            'title' => 'Lowongan Karier',
+            'subTitle' => 'Daftar Karier',
             'kariers' => $this->karierApi->getAll()
         ];
         return view('karier.index', $data);
@@ -60,7 +60,7 @@ class KarierController extends Controller
         }
 
         $data = [
-            'title' => 'Karier',
+            'title' => 'Lowongan Karier',
             'subTitle' => 'Edit Lowongan',
             'karier' => $karier
         ];

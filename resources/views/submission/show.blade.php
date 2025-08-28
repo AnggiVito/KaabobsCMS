@@ -43,6 +43,16 @@
                         <dd class="col-sm-8">Rp {{ number_format($submission['expectedSalary'], 0, ',', '.') }}</dd>
                     </dl>
                 </div>
+                <hr>
+                <h5>Informasi Pekerjaan</h5>
+                <dl class="row">
+                    <dt class="col-sm-3">Pekerjaan Terakhir</dt>
+                    <dd class="col-sm-9">{{ $submission['previousJob'] }}</dd>
+                    <dt class="col-sm-3">Alasan Tertarik</dt>
+                    <dd class="col-sm-9">{{ $submission['whyKabobs'] }}</dd>
+                    <dt class="col-sm-3">Alasan Keluar</dt>
+                    <dd class="col-sm-9">{{ $submission['reasonForLeaving'] }}</dd>
+                </dl>
             </div>
             <hr>
             <h5>Dokumen Terlampir</h5>
@@ -56,6 +66,15 @@
                 <a href="{{ config('services.adonis.public_url') }}/{{ $submission['npwpPath'] }}" target="_blank" class="btn btn-success">
                     <i class="fa fa-file-alt"></i> Lihat NPWP
                 </a>
+                @if($submission['status'] == 1)
+                <form action="{{ route('submission.updateStatus', $submission['id']) }}" method="POST" class="d-inline">
+                    @csrf
+                    <input type="hidden" name="status" value="2">
+                    <button type="submit" class="btn btn-warning">Masukkan ke Shortlist</button>
+                </form>
+                @else
+                    <span class="badge badge-warning">Sudah di-Shortlist</span>
+                @endif
             </div>
         </div>
     </div>

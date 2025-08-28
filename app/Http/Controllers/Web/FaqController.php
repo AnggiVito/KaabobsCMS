@@ -19,7 +19,7 @@ class FaqController extends Controller
     {
         $data = [
             'title' => 'FAQ',
-            'subTitle' => 'Daftar FAQ',
+            'subTitle' => 'List FAQ',
             'faqs' => $this->faqApi->getAll()
         ];
         return view('faq.index', $data);
