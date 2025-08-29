@@ -28,11 +28,6 @@
                         <tr>
                             <td>
                                 <div class="d-flex align-items-center">
-                                    <div class="avatar avatar-sm bg-light border me-3">
-                                        <span class="text-primary fw-bold">
-                                            {{ strtoupper(substr($submission['firstName'], 0, 1)) }}{{ strtoupper(substr($submission['lastName'], 0, 1)) }}
-                                        </span>
-                                    </div>
                                     <div>
                                         <h6 class="mb-0 text-dark">{{ $submission['firstName'] }} {{ $submission['lastName'] }}</h6>
                                     </div>
